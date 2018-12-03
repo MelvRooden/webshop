@@ -11,17 +11,13 @@
 |
 */
 
-Route::get('/', 'ClientController@index');
-
-Route::get('/create', 'ClientController@index');
-Route::get('/profile', 'ClientController@index');
-
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('index/index');
-});
+Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('products/home', 'ProductController@index')->name('home');

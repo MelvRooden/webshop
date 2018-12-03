@@ -17,13 +17,12 @@ class CreateProductsTable extends Migration
             $table->increments('product_id');
             $table->string('product_name');
             $table->integer('product_price');
-            $table->integer('product_stock');
-            $table->text('product_details');
-            $table->unsignedInteger('product_category_id');
-            $table->timestamp('created_at');
-
-            $table->foreign('category_id')->references->on('categories');
-        });
+            $table->integer('product_stock')->nullable();
+            $table->text('product_details')->nullable();
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('category_id')->on('categories');
+            $table->timestamps();
+            });
     }
 
     /**
