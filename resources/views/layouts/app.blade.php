@@ -73,7 +73,35 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-3">
+
+                        <h1 class="my-4">@yield('')</h1>
+                        <div class="list-group">
+                            @foreach ($categories as $category)
+                                <a href="{{ action('ProductController@show', ['id' => $category->id]) }}" class="list-group-item">{{ $category->name }}</a>
+                            @endforeach
+                        </div>
+
+                    </div>
+                    <!-- /.col-lg-3 -->
+
+                    <div class="col-lg-9">
+                        <div class="container">
+
+                            @yield('content')
+
+                        </div>
+                    </div>
+                    <!-- /.col-lg-9 -->
+
+                </div>
+                <!-- /.row -->
+
+            </div>
         </main>
     </div>
 </body>
