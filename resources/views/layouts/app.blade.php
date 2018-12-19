@@ -64,7 +64,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
                                 </div>
+
                             </li>
                         @endguest
                     </ul>
@@ -74,33 +76,11 @@
 
         <main class="py-4">
             <div class="container">
-
                 <div class="row">
 
-                    <div class="col-lg-3">
-
-                        <h1 class="my-4">@yield('')</h1>
-                        <div class="list-group">
-                            @foreach ($categories as $category)
-                                <a href="{{ action('ProductController@show', ['id' => $category->id]) }}" class="list-group-item">{{ $category->name }}</a>
-                            @endforeach
-                        </div>
-
-                    </div>
-                    <!-- /.col-lg-3 -->
-
-                    <div class="col-lg-9">
-                        <div class="container">
-
-                            @yield('content')
-
-                        </div>
-                    </div>
-                    <!-- /.col-lg-9 -->
+                        @yield('content')
 
                 </div>
-                <!-- /.row -->
-
             </div>
         </main>
     </div>

@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! <br>
+                    <a href="{{ action('ProductController@index') }}">Shop</a>
                 </div>
             </div>
         </div>

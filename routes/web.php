@@ -26,7 +26,3 @@ Route::get('/products/{product}', 'ProductController@show')->name('products.show
 Route::get('/products/{category}', 'CategoryController@show')->name('categories.show');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::post('', 'HomeController@show')->name('product.show');
-
