@@ -62,8 +62,8 @@
                                 <h5>€{{ $product->price  }}</h5>
                             </div>
                             <div class="card-footer">
-                                @foreach($categories as $category)
-                                <a href="{{ action('ProductController@show', ['id' => $category->id]) }}" class="text-muted">{{ $category->name }}</a>
+                                @foreach($product->categories as $category)
+                                    <a href="{{ action('CategoryController@show', ['id' => $category->id]) }}" class="text-muted">{{ $category->name }}</a>
                                 @endforeach
                             </div>
                         </div>
