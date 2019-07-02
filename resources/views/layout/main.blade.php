@@ -15,7 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <!-- Fonts awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -23,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('index') }}">
                     {{ config('app.name', 'WebShop') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -55,12 +56,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ route('order') }}">Orders</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -69,17 +72,28 @@
 
                             </li>
                         @endguest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('shoppingCart') }}"><i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>                    
                     </ul>
                 </div>
             </div>
         </nav>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
 
         <main class="py-4">
             <div class="container">
                 <div class="row">
+                    <div class="col-lg-9">
+                        <div class="container">
+                            <div class="row">
 
-                        @yield('content')
+                                @yield('content')
 
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

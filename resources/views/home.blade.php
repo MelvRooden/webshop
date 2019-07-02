@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.main')
 
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in! <br>
-                    <a href="{{ action('ProductController@index') }}">Shop</a>
+                    <a href="{{ action('ProductController@index') }}">To the Store!</a>
                 </div>
             </div>
         </div>

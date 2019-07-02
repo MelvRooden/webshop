@@ -31,5 +31,13 @@ class CategoriesSeeder extends Seeder
             'name' => 'FPS',
             'details' => 'First Person Shooter.',
         ]);
+        DB::table('categories')->insert([
+            'name' => 'Surival',
+            'details' => 'Survival.',
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Open World',
+            'details' => 'Free-roaming worlds.',
+        ]);
     }
 }
