@@ -39,7 +39,7 @@ class ShoppingCartController extends Controller
     public function store(Request $request)
     {
         SessionCart::store(['id' => $request->id, 'quantity' => $request->quantity]);
-        return redirect("/");
+        return redirect()->back();
     }
 
     public function show($id)
